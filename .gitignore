@@ -15,7 +15,6 @@ venv/
 .rasa/
 *.lock
 *.json
-results/
 models/
 
 # Streamlit Specific Files
@@ -36,7 +35,6 @@ Thumbs.db
 *.csv
 *.xlsx
 *.json
-test_data.md
 
 # Environment & Configuration Files
 config.yml
