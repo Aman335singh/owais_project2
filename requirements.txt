@@ -1,7 +1,6 @@
 streamlit
 pandas
 requests
-en-core-web-sm
 spacy==3.8.3
 thinc==8.2.1
 rasa

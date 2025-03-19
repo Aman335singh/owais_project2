@@ -3,9 +3,16 @@ import requests
 import pandas as pd
 import spacy
 import os
+import subprocess
 
 # Load SpaCy NLP model
-nlp = spacy.load("en_core_web_sm")
+# Force link the model at runtime (if missing)
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
+
+#nlp = spacy.load("en_core_web_sm")
 
 # Load cleaned dataset
 BASE_DIR = os.path.abspath("M:/sem8/owais_project")
