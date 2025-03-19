@@ -18,7 +18,6 @@ venv/
 models/
 
 # Streamlit Specific Files
-.streamlit/
 
 # IDE & Editor Files
 .vscode/
