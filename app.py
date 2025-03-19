@@ -8,7 +8,8 @@ import os
 nlp = spacy.load("en_core_web_sm")
 
 # Load cleaned dataset
-df = pd.read_csv("M:/sem8/owais_project/food_data.csv").drop(['Unnamed: 0'], axis=1)
+BASE_DIR = os.path.dirname(os.path.abspath(M:/sem8/owais_project))
+df = pd.read_csv(os.path.join(BASE_DIR, "data", "food_data.csv")).drop(['Unnamed: 0'], axis=1)
 
 # Rasa API endpoint
 RASA_API_URL = "http://localhost:5005/webhooks/rest/webhook"
@@ -53,7 +54,7 @@ if user_query:
             st.write(f"**Instructions:** {row['Instructions']}")
             
             # Display Image if Available
-            image_path = os.path.join("M:/sem8/owais_project/FoodImages/Food Images", row['Image_Name'] + ".jpg")
+            image_path = os.path.join(BASE_DIR, "data", "FoodImages", row['Image_Name'] + ".jpg")
             if os.path.exists(image_path):
                 st.image(image_path, caption=row['Title'].title(), use_container_width=True)
             else:
