@@ -1,0 +1,28 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey there
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+
+- intent: ask_recipe
+  examples: |
+    - Can you suggest a recipe?
+    - I need a cooking idea
+    - What can I cook today?
+    - Suggest me a recipe with [tomatoes](recipe_query)
+    - I have some [potatoes](recipe_query), what can I cook?
+
+- intent: inform
+  examples: |
+    - I have [potatoes](ingredient)
+    - I can cook with [onions](ingredient)
+    - I bought some [tomatoes](ingredient)

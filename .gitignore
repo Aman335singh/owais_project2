@@ -1,0 +1,44 @@
+# Python Environment & Dependencies
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+myvenv/
+env/
+venv/
+
+# Rasa Specific Files
+.rasa/
+*.lock
+*.json
+results/
+models/
+
+# Streamlit Specific Files
+.streamlit/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Data Files
+*.csv
+*.xlsx
+*.json
+test_data.md
+
+# Environment & Configuration Files
+config.yml
+credentials.yml
+endpoints.yml

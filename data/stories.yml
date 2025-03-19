@@ -1,0 +1,11 @@
+version: "3.1"
+
+stories:
+- story: Greet and Recipe Suggestion
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_recipe
+  - action: utter_recipe_suggestion
+  - intent: inform
+  - action: action_search_recipe
