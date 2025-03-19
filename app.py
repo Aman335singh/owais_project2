@@ -53,7 +53,7 @@ if user_query:
             st.write(f"**Instructions:** {row['Instructions']}")
             
             # Display Image if Available
-            image_path = os.path.join("M:/sem8/owais_project/Food Images/Food Images", row['Image_Name'] + ".jpg")
+            image_path = os.path.join("M:/sem8/owais_project/FoodImages/Food Images", row['Image_Name'] + ".jpg")
             if os.path.exists(image_path):
                 st.image(image_path, caption=row['Title'].title(), use_container_width=True)
             else:
