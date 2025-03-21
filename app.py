@@ -15,7 +15,7 @@ except OSError:
 
 # Load cleaned dataset
 BASE_DIR = os.path.abspath("M:/sem8/owais_project")
-df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv")).drop(['Unnamed: 0'], axis=1)
+df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
 
 # Rasa API endpoint
 RASA_API_URL = "http://localhost:5005/webhooks/rest/webhook"
