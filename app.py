@@ -3,13 +3,13 @@ import requests
 import pandas as pd
 import spacy
 import os
+import subprocess
 
 # Load SpaCy NLP model
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
 try:
-    nlp = spacy.load("en_core_web_sm")
-
+    spacy.load("en_core_web_sm")
 except OSError:
     subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
 
