@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import spacy
 import os
-
+import subprocess
 # Load SpaCy NLP model
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
