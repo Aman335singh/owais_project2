@@ -5,7 +5,7 @@ import spacy
 import os
 
 # Load SpaCy NLP model
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load('en_core_web_sm')
 
 # Load cleaned dataset
 BASE_DIR = os.path.abspath("M:/sem8/owais_project")
