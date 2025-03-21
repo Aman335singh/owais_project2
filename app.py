@@ -3,7 +3,6 @@ import requests
 import pandas as pd
 import spacy
 import os
-import subprocess
 
 # Load SpaCy NLP model
 # Load SpaCy NLP model
@@ -14,8 +13,8 @@ except OSError:
     subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
 
 # Load cleaned dataset
-BASE_DIR = "/mount/src/owais_project2"
-df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8')
+BASE_DIR = os.path.abspath("M:/sem8/owais_project2")
+df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
 
 # Rasa API endpoint
 RASA_API_URL = "http://localhost:5005/webhooks/rest/webhook"
