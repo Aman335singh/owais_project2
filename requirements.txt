@@ -4,4 +4,3 @@ requests
 spacy==3.7.2
 rasa
 spacy
-en-core-web-sm
