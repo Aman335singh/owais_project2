@@ -3,3 +3,5 @@ pandas
 requests
 spacy==3.8.3
 rasa
+spacy
+en-core-web-sm
