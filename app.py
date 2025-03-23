@@ -13,7 +13,13 @@ except OSError:
     subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
 
 # Load cleaned dataset
-BASE_DIR = os.path.abspath("/mount/src/owais_project2")
+# Dynamic path adjustment
+if os.name == 'nt':  # Windows
+    BASE_DIR = "M:/sem8"
+else:  # Linux
+    BASE_DIR = "/mount/src/owais_project2"
+
+# Load dataset
 df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
 
 # Rasa API endpoint
