@@ -4,19 +4,21 @@ import pandas as pd
 import spacy
 import os
 import subprocess
+# Load cleaned dataset
+# Dynamic path adjustment
+import platform
 # Load SpaCy NLP model
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
 try:
-    spacy.load("en_core_web_sm")
+    nlp=spacy.load("en_core_web_sm")
 except OSError:
     subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
 
-# Load cleaned dataset
-# Dynamic path adjustment
-if os.name == 'nt':  # Windows
-    BASE_DIR = "M:/sem8"
-else:  # Linux
+# Set BASE_DIR based on the operating system
+if platform.system() == "Windows":
+    BASE_DIR = "M:\\sem8\\owais_project"
+else:
     BASE_DIR = "/mount/src/owais_project2"
 
 # Load dataset
