@@ -18,9 +18,11 @@ print("Current Working Directory:", os.getcwd())
 print("Files in Current Directory:", os.listdir(os.getcwd()))
 # Set BASE_DIR based on the operating system
 if platform.system() == "Windows":
-    BASE_DIR = "M:\\sem8\\owais_project"
+    BASE_DIR = "/mount/src/owais_project2"
+
 else:
-    BASE_DIR = "M:/sem8/owais_project"
+    BASE_DIR = "/mount/src/owais_project2"
+
 
 
 # Load dataset
