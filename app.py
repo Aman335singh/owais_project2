@@ -10,6 +10,7 @@ import platform
 # Load SpaCy NLP model
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
+# Load SpaCy NLP model
 nlp=spacy.load("en_core_web_sm")
 print("Current Working Directory:", os.getcwd())
 print("Files in Current Directory:", os.listdir(os.getcwd()))
