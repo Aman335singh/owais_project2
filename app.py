@@ -10,10 +10,7 @@ import platform
 # Load SpaCy NLP model
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
-try:
-    nlp=spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
+nlp=spacy.load("en_core_web_sm")
 print("Current Working Directory:", os.getcwd())
 print("Files in Current Directory:", os.listdir(os.getcwd()))
 # Set BASE_DIR based on the operating system
