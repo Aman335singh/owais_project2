@@ -14,12 +14,14 @@ try:
     nlp=spacy.load("en_core_web_sm")
 except OSError:
     subprocess.run(["python", "-m", "spacy", "link", "en_core_web_sm", "en_core_web_sm", "--force"])
-
+print("Current Working Directory:", os.getcwd())
+print("Files in Current Directory:", os.listdir(os.getcwd()))
 # Set BASE_DIR based on the operating system
 if platform.system() == "Windows":
     BASE_DIR = "M:\\sem8\\owais_project"
 else:
-    BASE_DIR = "/mount/src/owais_project2"
+    BASE_DIR = "M:/sem8/owais_project"
+
 
 # Load dataset
 df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
