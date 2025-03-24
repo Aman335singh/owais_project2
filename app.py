@@ -6,7 +6,7 @@ import os
 import subprocess
 import platform
 from pathlib import Path
-st.set_option('server.fileWatcherType', 'none')
+
 # Load SpaCy NLP model
 try:
     nlp = spacy.load("en_core_web_sm")
