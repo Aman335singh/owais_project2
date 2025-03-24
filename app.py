@@ -67,7 +67,7 @@ if user_query:
             image_path = os.path.join(BASE_DIR, "FoodImages/Food Images", row['Image_Name'] + ".jpg")
 
             if os.path.exists(image_path):
-                st.image(image_path, caption=row['Title'].title(), use_container_width=True)
+                st.image(image_path, caption=row['Title'].title(), width=500)
             else:
                 st.write("Image not available")
     else:
