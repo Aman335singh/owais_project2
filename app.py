@@ -11,17 +11,17 @@ import platform
 # Load SpaCy NLP model
 # Force link the model at runtime (if missing)
 # Load SpaCy NLP model
-nlp=spacy.load("en_core_web_sm")
-print("Current Working Directory:", os.getcwd())
-print("Files in Current Directory:", os.listdir(os.getcwd()))
-# Set BASE_DIR based on the operating system
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    import subprocess
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 if platform.system() == "Windows":
-    BASE_DIR = "/mount/src/owais_project2"
+    BASE_DIR = "M:/sem8/owais_project"
 
 else:
     BASE_DIR = "/mount/src/owais_project2"
-
-
 
 # Load dataset
 df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
