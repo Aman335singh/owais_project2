@@ -4,12 +4,9 @@ import pandas as pd
 import spacy
 import os
 import subprocess
-# Load cleaned dataset
-# Dynamic path adjustment
 import platform
-# Load SpaCy NLP model
-# Load SpaCy NLP model
-# Force link the model at runtime (if missing)
+from pathlib import Path
+st.set_option('server.fileWatcherType', 'none')
 # Load SpaCy NLP model
 try:
     nlp = spacy.load("en_core_web_sm")
@@ -17,17 +14,16 @@ except OSError:
     subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
     nlp = spacy.load("en_core_web_sm")
 if platform.system() == "Windows":
-    BASE_DIR = "M:/sem8/owais_project"
-
+    BASE_DIR = Path("M:/sem8/owais_project")
 else:
-    BASE_DIR = "/mount/src/owais_project2"
+    BASE_DIR = Path("/mount/src/owais_project2")
+
 
 # Load dataset
 df = pd.read_csv(os.path.join(BASE_DIR, "food_data.csv"), encoding='utf-8').drop(['Unnamed: 0'], axis=1)
 
 # Rasa API endpoint
-RASA_API_URL = "http://localhost:5005/webhooks/rest/webhook"
-
+RASA_API_URL =  "http://127.0.0.1:4040"  
 
 def chat_with_rasa(message):
     response = requests.post(RASA_API_URL, json={"sender": "user", "message": message})
