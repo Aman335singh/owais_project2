@@ -4,4 +4,4 @@ spacy==3.7.2
 numpy==1.23.5
 pandas==2.1.0
 requests==2.31.0
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0.tar.gz
